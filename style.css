@@ -46,7 +46,7 @@ header {
 .header-nav a:hover{
      transform: scale(1.3);
      /* text-transform: inh; */
-     text-decoration: underline;
+     /* text-decoration: underline; */
 } 
 
 /* ion-icon{ 
