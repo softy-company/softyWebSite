@@ -99,7 +99,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 
 .social-media a {
@@ -136,6 +136,10 @@ footer {
         left: 0;
         width: 100%;
     }
+    .contact-info{
+        flex-direction: column;
+
+    }   
 
     nav ul li {
         margin: 10px 0;
@@ -149,12 +153,11 @@ footer {
     /* .header-nav{
         display: none;
     } */
-    .contact-info{
-        flex-direction: column;
 
-    }
+ 
     .social-media a{
 margin-top: 20px;
+font-size: 10px;
     }
     .banner img{
         width: 100px;
