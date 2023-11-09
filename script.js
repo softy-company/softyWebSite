@@ -1,33 +1,42 @@
 const link = document.querySelector(".link");
 const nav = document.querySelector(".header-nav");
 const button = document.querySelector(".blog button");
-// const icon = document.querySelector("");
+const header = document.querySelector("header");
+const logo = document.querySelector(".logo");
 button.innerHTML = `<ion-icon name="menu-outline"></ion-icon>`;
-
 
 button.addEventListener("click", () => {
   check();
 });
 
 function check() {
-  if (nav.style.display === "none" || nav.style.display === "") {
+  const computedStyle = window.getComputedStyle(nav);
+
+  if (computedStyle.display === "none" || computedStyle.display === "hidden") {
     button.style.animation = "none";
     setTimeout(() => {
       button.style.animation = "icon 0.3s ease";
     }, 1);
     nav.style.display = "block";
-  } else if (nav.style.display === "block") {
+header.style.paddingBottom = "100%"
+logo.style.opacity = "0";
+  } else if (computedStyle.display === "block") {
     nav.style.display = "none";
-    // button.innerHTML = "";
-    button.innerHTML = `<ion-icon name="arrow-back-outline"></ion-icon>`;
+    header.style.paddingBottom = ""
+logo.style.opacity = "1";
+// logo.style.display = "block";
+
+    button.innerHTML = `<ion-icon name="menu-outline"></ion-icon>`;
   }
 }
+
 button.addEventListener("animationend", () => {
-    if (nav.style.display === "none" || nav.style.display === "") {
-      button.innerHTML = "";
-      console.log(button.innerHTML);
-    } else if (nav.style.display === "block") {
-      button.innerHTML = `<ion-icon name="menu-outline"></ion-icon>`;
-    }
-  });
+  const computedStyle = window.getComputedStyle(nav);
+
+  if (computedStyle.display === "none" || computedStyle.display === "hidden") {
+    button.innerHTML = `<ion-icon name="menu-outline"></ion-icon>`;
+  } else if (computedStyle.display === "block") {
+    button.innerHTML = `<ion-icon name="arrow-back-outline"></ion-icon>`;
+  }
+});
 // check()
