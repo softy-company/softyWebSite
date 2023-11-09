@@ -1,7 +1,9 @@
 const link = document.querySelector(".link");
 const nav = document.querySelector(".header-nav");
 const button = document.querySelector(".blog button");
-const icon = document.querySelector("ion-icon");
+// const icon = document.querySelector("");
+button.innerHTML = `<ion-icon name="menu-outline"></ion-icon>`;
+
 
 button.addEventListener("click", () => {
   check();
@@ -9,23 +11,23 @@ button.addEventListener("click", () => {
 
 function check() {
   if (nav.style.display === "none" || nav.style.display === "") {
-    icon.style.animation = "none";
+    button.style.animation = "none";
     setTimeout(() => {
-      icon.style.animation = "icon 0.3s ease-in-out";
+      button.style.animation = "icon 0.3s ease";
     }, 1);
     nav.style.display = "block";
   } else if (nav.style.display === "block") {
     nav.style.display = "none";
-    icon.innerHTML = `<ion-icon name="arrow-back-outline"></ion-icon>`;
+    // button.innerHTML = "";
+    button.innerHTML = `<ion-icon name="arrow-back-outline"></ion-icon>`;
   }
 }
-icon.addEventListener("animationend", () => {
+button.addEventListener("animationend", () => {
     if (nav.style.display === "none" || nav.style.display === "") {
-      // Иконка после завершения анимации отображения
-      icon.innerHTML = `<ion-icon name="arrow-forward-outline"></ion-icon>`;
+      button.innerHTML = "";
+      console.log(button.innerHTML);
     } else if (nav.style.display === "block") {
-      // Иконка после завершения анимации скрытия
-      icon.innerHTML = `<ion-icon name="arrow-back-outline"></ion-icon>`;
+      button.innerHTML = `<ion-icon name="menu-outline"></ion-icon>`;
     }
   });
 // check()
