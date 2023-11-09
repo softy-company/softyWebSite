@@ -95,6 +95,12 @@ footer {
 .contact-info p {
     margin: 5px 0;
 }
+.social-media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 .social-media a {
     text-decoration: none;
@@ -103,8 +109,8 @@ footer {
     border: 2px solid #FFF;
     padding: 5px 10px;
     border-radius: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
+    /* margin-left: 50px;
+    margin-right: 50px; */
     transition: 0.7s;
 
 }
@@ -121,7 +127,7 @@ footer {
         padding: 10px;
     }
 
-    nav ul {
+    .header-nav {
         display: none;
         flex-direction: column;
         position: absolute;
@@ -137,6 +143,27 @@ footer {
 
     .banner h1 {
         font-size: 1.5rem;
+    }
+} 
+@media (max-width: 300px) {
+    /* .header-nav{
+        display: none;
+    } */
+    .contact-info{
+        flex-direction: column;
+
+    }
+    .social-media a{
+margin-top: 20px;
+    }
+    .banner img{
+        width: 100px;
+        height: 100px;
+
+    }
+    .logo img{
+        width: 50px;
+        height: 50px;
     }
 }
 
