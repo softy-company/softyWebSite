@@ -3,8 +3,9 @@ const nav = document.querySelector(".header-nav");
 const button = document.querySelector(".blog button");
 const header = document.querySelector("header");
 const logo = document.querySelector(".logo");
+const a = document.querySelectorAll(".header-nav a")
 button.innerHTML = `<ion-icon name="menu-outline"></ion-icon>`;
-
+// console.log(a);
 button.addEventListener("click", () => {
   check();
 });
@@ -18,6 +19,16 @@ function check() {
       button.style.animation = "icon 0.3s ease";
     }, 1);
     nav.style.display = "block";
+    // nav.style.marginRight = "200px"
+    // console.log(a[0]);
+    a.forEach((el)=>{
+        el.style.marginRight = "220px"
+        el.style.display = "flex"
+
+console.log(el);
+        el.style.marginTop = "20px"
+    })
+    // a.style.marginBottom = "20px"
 header.style.paddingBottom = "100%"
 logo.style.opacity = "0";
   } else if (computedStyle.display === "block") {
